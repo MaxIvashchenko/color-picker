@@ -1,0 +1,256 @@
+.colorPicker {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    position: relative;
+    height: 100vh;
+}
+
+.form {
+    z-index: 10;
+    background-color: rgb(230, 225, 182);
+    /* margin: 100px auto; */
+    padding: 10px;
+    width: 300px;
+    height: 60px;
+    display: flex;
+    border-radius: 10px;
+    /* align-self: flex-start; */
+    margin-top: 100px;
+}
+
+.errorInput {
+    margin-top: 10px;
+    color: red;
+}
+.errorBtn {
+    background-color: grey;
+    color: #ffffff;
+    border-radius: 5px;
+    margin-top: 15px;
+    height: 40px;
+    padding: 5px 30px;
+}
+
+input {
+    height: 100%;
+    width: 60%;
+    border: none;
+    padding: 0;
+    font-size: 16px;
+    font-family: Verdana;
+    text-transform: uppercase;
+    padding-left: 10px
+}
+
+.activeColorBlock, .RGBBlock {
+    background-color: beige;
+    height: 100%;
+    width: 20%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+.activeColorBlock>button, .RGBBlock>button {
+    z-index: 20;
+    height: 40px;
+    width: 40px;
+    /* background-color: blue; */
+    justify-items: center;
+    align-self: center;
+}
+
+button {
+    background: none;
+    border: none;
+}
+
+button:focus {
+    outline: none;
+}
+
+/* activeColorBlock */
+
+.colorsPopUp {
+    z-index: 10;
+    position: absolute;
+    top: 80px;
+    left: -55px;
+    width: 180px;
+    /* height: 50px; */
+    background-color: white;
+    border: 4px solid rgb(189, 183, 134);
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.colorsPopUp:after {
+    content: "";
+    position: absolute;
+    /* width: 20px;
+    height: 10px; */
+    top: -24px;
+    left: 70px;
+    border: 10px solid transparent;
+    border-bottom: 10px solid rgb(189, 183, 134);
+}
+
+.color {
+    width: 100%;
+    /* margin: 5px; */
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.colorName {
+    margin: 5px 0;
+    text-transform: uppercase;
+}
+
+.colorView {
+    height: 20px;
+    width: 20px;
+}
+
+.color:active, .color:focus {
+    background-color: rgb(141, 141, 199);
+    color: #ffffff;
+}
+
+/* RGBBlock */
+
+.RGBBtn {
+    background: no-repeat url('../images/sort-down.svg');
+    background-position: center;
+    align-self: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+.RGBBPopUp {
+    z-index: 10;
+    position: absolute;
+    top: 80px;
+    left: -130px;
+    width: 200px;
+    /* height: 50px; */
+    background-color: white;
+    border: 4px solid rgb(189, 183, 134);
+    box-sizing: border-box;
+    border-radius: 5px;
+    transition: visibility 1s;
+    opacity: 1;
+    /* visibility: visible;  */
+}
+
+.RGBBPopUphide {
+    position: absolute;
+    top: 80px;
+    left: -130px;
+    width: 200px;
+    transition: visibility 1s;
+    opacity: 0;
+    /* visibility: hidden;  */
+}
+
+.activeRGBBtn {
+    transform: rotateX(180deg);
+}
+
+.RGBBPopUp:after {
+    content: "";
+    position: absolute;
+    /* width: 20px;
+    height: 10px; */
+    top: -24px;
+    left: 145px;
+    border: 10px solid transparent;
+    border-bottom: 10px solid rgb(189, 183, 134);
+}
+
+.RGBBPopUp .inputs {
+    padding: 8px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.RGBBPopUp label {
+    padding: 0 5px;
+}
+
+.R-colorBox input::-webkit-slider-runnable-track {
+    background: linear-gradient(90deg, rgb(238, 52, 52), rgb(39, 0, 0));
+}
+
+.G-colorBox input::-webkit-slider-runnable-track {
+    background: linear-gradient(90deg, rgb(48, 153, 17), rgb(39, 0, 0));
+}
+
+.B-colorBox input::-webkit-slider-runnable-track {
+    background: linear-gradient(90deg, rgb(56, 147, 221), rgb(39, 0, 0));
+}
+
+.RGBBPopUp input {
+    height: 33px;
+    -webkit-appearance: none;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.RGBBPopUp input:focus {
+    outline: none;
+}
+
+.RGBBPopUp input::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 15px;
+    cursor: pointer;
+    animate: 0.2s;
+    border-radius: 25px;
+}
+
+.RGBBPopUp input::-webkit-slider-thumb {
+    /* box-shadow: 1px 1px 1px #000031; */
+    border: 1px solid #00001E;
+    height: 25px;
+    width: 26px;
+    border-radius: 15px;
+    background: #ffffff;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -5.5px;
+}
+
+.wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 8;
+    /* background-color: #ff0000; */
+}
+
+.RGBBPopUp .buttons {
+    text-align: right;
+}
+
+.RGBBPopUp button {
+    height: 30px;
+    width: 60px;
+    margin: 5px;
+    font-weight: 600;
+}
+
+.buttonCancel {
+    background: #c04b4b85;
+}
+
+.buttonSubmit {
+    background: rgb(45, 175, 33);
+    color: white;
+}
